@@ -11,11 +11,11 @@ var User = mongoose.model("User");
 var addItems = async () => {
     const id = "000000000000000000000000";
     const user = await User.findById(id);
-    for (var i = 0; i<100; i++) {
+    for (var i = 0; i<200; i++) {
         let item = new Item({
-            title: `random ${Math.ceil(Math.random() * 100)}`,
-            description: `random ${Math.ceil(Math.random() * 100)}`,
-            image: `https://picsum.photos/id/${Math.ceil(Math.random() * 100)}/200/300`,
+            title: `random ${Math.ceil(Math.random() * 1000)}`,
+            description: `random ${Math.ceil(Math.random() * 1000)}`,
+            image: `https://picsum.photos/id/${Math.ceil(Math.random() * 1000)}/200/300`,
             tagList: '',
           });
     
