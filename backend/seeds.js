@@ -9,7 +9,7 @@ var Item = mongoose.model("Item");
 var User = mongoose.model("User");
 
 var addItems = async () => {
-    const id = "000000000000000000000000";
+    const id = "6270279e4bff5e00499c1f56";
     const user = await User.findById(id);
     for (var i = 0; i<200; i++) {
         let item = new Item({
