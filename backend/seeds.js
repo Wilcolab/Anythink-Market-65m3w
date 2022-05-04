@@ -9,17 +9,22 @@ var Item = mongoose.model("Item");
 var User = mongoose.model("User");
 
 var addItems = async () => {
-    const id = "6270279e4bff5e00499c1f56";
-    const user = await User.findById(id);
-    for (var i = 0; i<200; i++) {
+    for (var i = 0; i<100; i++) {
+        let rand = Math.ceil(Math.random() * 100000);
+        let user = new User({
+            username: rand,
+            email: `${rand}@${rand}.com`
+        });
         let item = new Item({
-            title: `random ${Math.ceil(Math.random() * 1000)}`,
-            description: `random ${Math.ceil(Math.random() * 1000)}`,
-            image: `https://picsum.photos/id/${Math.ceil(Math.random() * 1000)}/200/300`,
+            title: `random ${rand}`,
+            description: `random ${rand}`,
+            image: `https://picsum.photos/id/${rand}/200/300`,
             tagList: '',
-          });
+        });
+
+        
     
-        item.seller = user;
+        item.seller = await user.save();
     
         await item.save();
     }
