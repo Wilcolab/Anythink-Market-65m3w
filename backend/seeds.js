@@ -7,6 +7,7 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.set("debug", true);
 var Item = mongoose.model("Item");
 var User = mongoose.model("User");
+var Comment = mongoose.model("Comment");
 
 var addItems = async () => {
     for (var i = 0; i<100; i++) {
