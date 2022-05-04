@@ -21,12 +21,22 @@ var addItems = async () => {
             image: `https://picsum.photos/id/${rand}/200/300`,
             tagList: '',
         });
+        let comment = new Comment({
+            body: rand
+        })
 
+        let savedUser = await user.save();
+        item.seller = savedUser;
+        let savedItem = await item.save();
+        
+
+
+        comment.seller = savedUser;
+        comment.item = savedItem;
+    
         
     
-        item.seller = await user.save();
-    
-        await item.save();
+        await comment.save();
     }
 
 }
