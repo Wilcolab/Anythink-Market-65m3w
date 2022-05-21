@@ -23,4 +23,4 @@ Make sure your server is up and running to serve requests.
   - Delete comment button (only shown to comment's author)
 - Profile page (URL: /#/@username, /#/@username/favorites )
   - Show basic user info
-  - List of items populated from seller's items or user favorite items
+  - List of items populated from seller's items or user favorite items 
